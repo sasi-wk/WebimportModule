@@ -4,6 +4,7 @@
       <table class="dataTables_main" width="100%" name="uploaded">
         <thead>
           <tr>
+            <th>ลำดับ</th>
             <th>ชื่อผู้อัพโหลด</th>
             <th>ชื่อไฟล์</th>
             <th>เวลา</th>
@@ -14,6 +15,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let list of uploadlist; let i = index" (click)="setClickedRow(list)" [class.active]="i == selectedRow" ng-hide="hideControl">
+            <td>{{i+1}}</td>
             <td>{{list.uploader}}</td>
             <td>{{list.filename}}</td>
             <td>{{list.uploaded}}</td>
@@ -25,17 +27,19 @@
       </table>
     </div>
   </div>
-  <div class="table"  >
-    <div class="table__sub"  *ngIf="!dataTables_main">
+  <div class="table">
+    <div class="table__sub" *ngIf="!dataTables_main">
       <table class="dataTables_sub" width="100%" ng-model="hideControl">
         <thead>
           <tr>
+            <th>No.</th>
             <th>Ref.</th>
             <th>Error</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let list of errlist; let i = index">
+            <td>{{i+1}}</td>
             <td>{{list.ref.vn}}</td>
             <td>{{list.err_msg}}</td>
           </tr>
@@ -44,4 +48,3 @@
     </div>
   </div>
 </div>
-

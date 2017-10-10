@@ -66,6 +66,7 @@ ol, ul {
   list-style: none; }
 
 table {
+  text-align: center;
   border-collapse: collapse;
   border-spacing: 0;
   font-weight: bold; }
